@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// window - doucment - form
+	//console.log(document.forms[0].action);
+	//console.log(document.fr.action);
+	
+	// form 태그의 접근 방식
+	// 1) (window.)document.forms[0].속성
+	// 2) (window.)document.form 태그의 name.속성
+	
+	function func1() {
+		console.log("--------------------------------------------");
+		console.log(document.forms);
+		console.log(document.fr.action);
+		console.log(document.fr);
+		
+		console.log("action:"+document.forms[0].action);
+		console.log("name:"+document.forms[0].name);
+		console.log("method:"+document.forms[0].method);			
+	}
+	function func2() {
+		document.fr.action = "b.jsp";
+		document.fr.method = "post";
+		document.fr.submit();
+	}
+	function func3() {
+		document.fr.action = "c.jsp";
+		document.fr.method = "get";
+	}
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js2/test2.html</h1>
+	<h2>form 태그 : 특정 페이지로 이동할 때, input 데이터를 가지고 이동</h2>
+	<fieldset>
+		<legend>form 태그</legend>
+		<form method="get" action="a.jsp" name="fr" onsubmit="func3()">
+			<input type="text" name="id"/>
+			<input type="submit" />
+			<hr>
+			<input type="button" value="form태그 속성 확인" onclick="func1()"/>
+			<input type="button" value="form태그 속성 변경" onclick="func2()"/>
+		</form>
+	</fieldset>
+</body>
+</html>

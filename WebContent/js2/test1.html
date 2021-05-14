@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	//자바스크립트언어 : 객체기반의 언어
+	//객체 (Object) : 눈 앞에 있는 모든 대상(핸드폰,키보드,마우스,,,,)이 객체
+	//				특징(속성),기능(동작)으로 구성
+	//	=>객체 추상화 - 실제 코드로 사용될 객체를 정의, 객체의 특징과 기능을 정의
+	
+	// ex)모니터 - 객체
+	//   속성 -크기,제조사,가격,화소등...
+	//	 동작 -전원OnOff, 밝기조절...(이런것들을 추상화한다)
+	//  즉 이런것들을 객체라 하는데 세상모든것들을 객체로 만들지는 않기에..
+	//  속성을 변수로, 동작은 함수(메서드)
+	
+	// 참조변수 => new Object(); [객체를 생성했습니다] 라고 표현을 한다.
+	
+	// TV객체
+	var TV = new Object();	
+	document.write("모델명:"+TV.model+"<br>");
+	//tv에 속성을 부여(width,height,model,price)
+	TV.width =3000;	//그냥 width라는 변수는 tv와 관련있어보이지 않는다
+	TV.height =4000;
+	TV.model = "삼성";
+	TV.price ="100만";
+	TV.power =false;
+	
+	document.write("모델명:"+TV.model+"<br>");
+	
+	// TV기능 - 전원 On/off (이를 위해서 TV에 변수 TV.power를 만든다)
+/* 	function powerOn(btn1,btn2){
+		if(btn1!=null & btn2!=null){
+			switch(btn1,btn2)
+			case (btn1==true& btn2=true):
+				TV.power=true;
+				break;
+			case	
+		}
+	} */
+	
+	//전원이 1개라면
+	function tvPowerOnOff(){
+		//이게 기존에 off되어 있는지 on되어있는지 모른다.
+		if(TV.power){	//true일때, tv가 켜져있다
+			TV.power = false;
+			alert("티비종료!");
+		}else{	//false
+			TV.power =true;
+			alert("티비켜짐!");
+			
+		}
+	}
+	tvPowerOnOff();
+	tvPowerOnOff();
+	
+	
+	//스마트폰 - 모델명,가격,브랜드
+	//		- 전화걸기()
+	var smartPhone = new Object();
+	smartPhone.model="galaxy_s21_Ultra";
+	smartPhone.price="1,000,000";
+	smartPhone.brand="Samsung";
+	smartPhone.call= "010-1234-5678";
+	//전화걸기 동작 => "전원켜기" ="통화앱실행" =>전화번호설정
+	//=>"통화버튼클릭" ->해당번호로 전화
+	
+	
+ 	var smartPhone.tel= function(){
+				alert("전원켜기");
+				alert("통화 앱실행");
+				alert("전화번호 입력");
+				alert("통화버튼 입력");
+				alert("전화걸기");
+	}
+	
+	
+ 	smartPhone.tel();
+ 	
+ 	///////////////////////////////////////
+ 	function tel2(){
+ 		alert("전원켜기");
+ 		var t= prompt("전화번호를 입력하세요");
+ 		alert(t+"번호로 전화연결중...")	//전화걸수있는동작이 있다면 써보면 된다
+ 	}
+	
+	tel2();
+	
+	//객체생성하기
+	//1)객체를 생성->메모리에 올리겠다. =>new는 이행동을 하는 연산자.
+	//	->객체생성을 할때마다 메모리에 생성
+	var Phone2 = new Object();
+	var Phone3 = new Object();
+	
+	//2)객체의 속성을 지정후 사용(선언,초기화,사용);
+	//3)객체의 동작(메소드)을 사용해서 다양한 형태를 실행 
+	
+	//**자바스크립트 객체
+	//1)내장객체 (내장함수처럼)
+	//	->자바스크립트에 기본적으로 내장되어있는 객체(문자-String, 날짜-Date, 수학-Math, 배열-Array)
+	//2)브라우저 객체 모델(Browser Object Model)
+	//	->브라우저안에는 계층적으로 객체들이 모여있음
+	//	(window,location,history,document 자바스크립트안에는 이미주소가 정해져있고..화면에 쓰여져있는게document객체)
+	//3)문서-객체모델(Document Object Model)
+	//	->문서(document)를 구성하는 객체들 =>우리가 쓰는 html태그도 이 문서객체중 하나이다
+	
+	//그래서 자바스크립트를 객체기반의 언어다!라고 하는것
+	//지금까지는 만들진 않았고 사용만했다.
+	//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+
+</head>
+<body>
+	<h1>WebContent/js2/test1.html</h1>
+	
+	
+	
+</body>
+</html>

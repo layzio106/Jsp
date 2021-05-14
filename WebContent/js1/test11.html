@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		
+		//정수 2개를 입력받아 두개의 합을 출력하는 함수
+		function outNum(num1,num2){
+		document.write("합 :"+(num1+num2));
+		}
+		
+		
+		outNum(12,20);
+		
+		document.write("<br>")
+		
+		
+		
+		
+		
+		//정수1개를 입력받아 해당 정수의 절대값을 리턴하는 함수
+		/*function plusOutput(num){
+			if(num>=0){
+				return num;
+			}else {
+				return -num;
+			}
+		} */
+		
+		function plusOutput(num){
+			if(num<0){
+				num=-num;
+			}
+			return num;
+		}
+		document.write("절대값리턴 : " + plusOutput(-20));
+		document.write("절대값리턴: " + plusOutput(20));
+
+		
+		
+		function plusOutput(num){
+			return num<0? (-num):num;
+		}
+		
+		
+		
+		
+		
+		
+		//1)함수 tot() 정수1개를 입력받아서 
+		//1~전달받은 정수(양의정수)까지 합을 출력하는 형태
+		function tot(num){
+			var sum=0;
+			for(var i=1; i<=num; i++){
+				sum+=i;
+			}//for의 끝
+			document.write("1~"+num+"까지의 합은" + sum+"입니다");
+		}
+		
+		
+		
+		//2)myCal() 숫자2개, 기호1개를 받아서( + - */ % )
+		//각 입력값에 대한 결과를 출력
+		//myCal(10,"+",20) =>"결과 : 30"
+		myCal(numA,op,numB){
+			var result = 0;
+			switch(op){
+			case"+":
+				result = num1 + num2; //이렇게 하는 이유는 한번만 출력하기 위해서
+				break;
+			case "-":
+				result = num1 - num2;
+				break;
+			case "*":
+				result = num1 * num2;
+				break;
+			case "/";
+				result = num1 / num2;
+				break;
+			case "%";
+				result = num1 % num2;
+			
+			default:
+				result ="해당연산불가!";
+			}//switch  end
+			document.write("결과: "+result+"<br>");
+		}//function end
+		
+		myCal(10,'+',20);
+		myCal(20,'/',4);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

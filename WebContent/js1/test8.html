@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	//중첩반복문(중첩 for문)
+	//시침이1증가하기위해서 분침이 처음부터 끝까지 다 돌아야한다
+	/* for(초기식;조건식;증감식){	//시침
+		for(초기식;조건식;증감식){	//분침
+			반복할 코드;
+		}
+	} */
+	
+	
+	
+	/* 
+	for(var i=1;i<=5;i++){
+		
+		document.write(i+"시<br>");
+		
+		for(var j=1;j<=5;j++){
+			document.write("i = "+ i +", j = "+ j +"<br>" );
+		}
+		document.write("<hr>")
+	} 
+	*/
+	
+	
+	
+	
+	/* for(var i=2;i<=9;i++){
+		document.write("["+i+"]단<br>");
+		for(var j=1;j<=9;j++){
+			document.write( i + "*" +j + "=" +i*j+"<br>" );
+		}
+		document.write("<hr>")
+	}
+	 */
+	 
+	 
+	 
+	//var dan;
+/* 	 for(var dan=2;dan<=9;dan++){	//2~9단
+		 document.write("["+dan+"단]<br>");
+		for(var i=1;i<=9;i++){
+			document.write(dan + "*" + i + "=" + (dan*i)+"<br>");
+		} 
+	 document.write("<br>");
+	 } */
+	
+	
+	for(var i=0; i<=9; i++){
+		
+		for(var dan=2; dan<=9; dan++){
+			if(i==0){
+				document.write("["+dan+"단]"+" &nbsp&nbsp&nbsp&nbsp&nbsp ")
+			}else{
+			document.write(dan + "*" + i+ "="+ dan*i+" &nbsp&nbsp&nbsp ")
+			}//if-else 의 끝  
+		}
+		document.write("<br>");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</head>
+
+
+<body>
+	<h1>WebContents/js1/test8.html</h1>
+</body>
+</html>

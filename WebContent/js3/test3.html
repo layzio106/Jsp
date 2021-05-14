@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun1(){
+		//window-document-form-input,textArea,,,
+		alert(window.document.fr.userID.type);
+		alert(window.document.fr.userPW.type);
+		//'속성확인'클릭시 입력된 비밀번호 정보를 출력
+		alert(window.document.fr.userPW.value);
+		//펑션1번이라는 것 자체가 버튼을눌렀을때라는것과 같다
+		
+		//input기능()
+		// .focus() .select() .blur()
+		document.fr.userID.focus();
+		document.fr.userID.blur();
+		document.fr.userID.select();
+		
+	}
+	
+	function fun2(){
+		//사용자가 아이디정보를 입력했을때만 이동하도록(전제:버튼클릭시);
+		if(document.fr.userID.value.length>0){
+			//데이터입력 길이라는 정보를 변수에 저장 할 수 있느냐
+			//var name=document.fr.userID.value.length;
+		}
+		if(document.fr.userID.value==""){
+			alert("입력하세요");
+		}else{
+			alert("ID정보입력완료");
+			//submit(페이지 이동)
+			document.fr.submit();
+		}
+		//비밀번호, 주민번호(1,2), 하고싶은말 항목이  입력되어있을때만
+		//페이지 전송처리
+		var id==document.fr.userID.value;
+		var pw==document.fr.userPW.value;
+		var jul1=document.fr.jul1.value;
+		var jul2=document.fr.jul2.value;
+		var msg=document.fr.msg.value;
+		/*if(document.fr.userPW.value==""||document.fr.jul1.value==""||document.fr.jul2.value==""){
+			alert("입력하세요");
+		}else{
+			document.fr.submit();
+			
+		}*/
+		if(document.fr.userID.value==""){
+			alert("ID정보를 입력하세요");
+			document.fr.userID.focus();
+			return;
+		}
+		if(document.fr.ju1.value==""){
+			alert("주민번호앞정보를 입력하세요");
+			document.fr.ju1.focus();
+			return;
+		}
+		if(document.fr.ju2.value==""){
+			alert("주민번호뒷정보를 입력하세요");
+			document.fr.ju2.focus();
+			return;
+		}
+		if(document.fr.msg.value==""){
+			alert("메세지정보를 입력하세요");
+			document.fr.msg.focus();
+			return;
+		}
+		
+		
+		//break;(x)
+		//함수를 종료코드
+		
+	}
+	//fun2()의 끝
+	
+	//form태그는 image처럼 배열[0][1][2]등으로 가지고 온다
+	
+	//submit이라는 이벤트를 눌렀을때도 위(fun2()와 같은 기능을 가지도록!)
+	//서브밋이라는것 자체가 제어를 안하는경우 무조건넘어가는구조이므로 유효성검사를 통해 제어를 해줘야한다.
+	//서브밋버튼..호츨할때..form태그로 제어
+	//일반버튼경우는...onsubmit으로 버튼제어
+	function fun3(){ //함수는 3가지인경우에 그만된다..끝까지 가는경우/return문만나는경우/return false만나는경우
+		var id = document.fr.userId.value;
+		var pw = document.fr.userPW.value;
+		var ju1 = document.fr.ju1.value;
+		var ju2 = document.fr.ju2.value;
+		var msg = document.fr.msg.value;
+		//if((id!=" ")&&(pw!=" ")&&(ju1!=" ")&&(ju2!=" ")&&(msg!=" "))
+			if(document.fr.userID.value==""){
+				alert("ID정보를 입력하세요");
+				document.fr.userID.focus();
+				return false;
+			}
+			if(document.fr.ju1.value==""){
+				alert("주민번호앞정보를 입력하세요");
+				document.fr.ju1.focus();
+				return false;
+			}
+			if(document.fr.ju2.value==""){
+				alert("주민번호뒷정보를 입력하세요");
+				document.fr.ju2.focus();
+				return false;
+			}
+			if(document.fr.msg.value==""){
+				alert("메세지정보를 입력하세요");
+				document.fr.msg.focus();
+				return false;
+			}	
+			//document.fr.
+		/*	submit()사용 x..submit이라는 버튼을 누를때...서브밋버튼은 버튼에 이벤트거는게 아니라
+		   	폼태그에 onsubmit걸어줘야한다...submit버튼자체가 form에서 가는것이므로
+		   	서브밋버튼은...서브밋이라는 일을 끝내야 그 버튼의 역할이 끝나는것이고...버튼중...속성확인이라는것은
+		         그냥 
+		    onsubmit이라는 이벤트자체에 대한 이벤트를 막는것..
+		    onsubmit이 없거나 true => submit 이벤트진행 o
+		                 false => submit 이벤트 진행x                          */
+	}
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<h1>WebContent/js3/test3.html</h1>
+	<fiedset>
+	<form action=" test.jsp" name="fr" onsubmit="return fun3();">
+	<label>아이디:</label><input type="text" name="userID"  value=""><!-- 내가입력하는것을 저장하는곳이 value이다 -->
+	<!-- value도 하나의 객체가 된다. 대상.length가 될수 있다 -->
+	비밀번호:	<input type="password" name="userPW" value=""> <!-- 입력받는데이터들의특성을 갖는이름으로 지어야한다 입력받는매개변수,파라미터,데이터베이스 -->
+	주민번호:<input name="jul1">-<input name="jul2"><br>
+	하고싶은말:<textarea rows="5" cols="50" name="msg"></textarea><br> <!-- <textarea></textarea>는 붙여서 써야한다 -->
+	<hr>
+	<input type="submit" value="정보입력"><input type="reset" value="정보초기화">
+	<input type="button" value="속성확인" onclick="fun1();">
+	<input type="button" value="값 확인후 이동" onclick="fun2();">
+	</form>
+	</fiedset>
+</body>
+</html>

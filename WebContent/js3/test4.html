@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+		function fun1(){
+			//window-document-form-체크박스여러개[0]
+			//window-document-form-라디오버튼여러개[0]
+			alert("라디오버튼:"+document.fr.gender[0].name); //input태그자체가 객체이고 name,value등이 속성이다
+			console.log(document.fr.gender[0].name);
+			
+			alert("체크박스:"+document.fr.hobby[0].value);
+			console/log(document.fr.hobby[0].value);
+			
+			var hbo=document.fr.hobby[0];
+			alert("타입:"+hbo.type);
+			alert("체크박스값:"+hbo.value);
+			alert("cpzmqkrtm cpzmrkqt:"+hbo.checked);
+			//checked 속성 => 버튼의 체크여부에 따라서 true/false 출력
+			
+			//hbo.focus(); //html코드는 마우스가 없더라도 키보드로 접근이가능해야하므로 안보이면 tab키로 접근가능
+			document.fr.gender[0].click();
+			document.fr.hobby[1].click(); //기본적으로 체크박스등은 click()이라는 함수가 (기능)이 만들어져있다
+		}
+		function fun2(){
+			alert("fun2() 실행");
+			//라다오버튼(submit)안된경우 :
+			if(document.fr.gender[0].checked==false &&
+					document.fr.gender[1].checked==false){ //gender에 [0]을 선택하지 않았다면..true/false가 아닌 undefined
+				alert("성별체크x");
+				return;	//if-else대신에 return하나만~ 이프엘스자체가 제어문이기때문에더오랜동작이 필요하기때문에
+			}
+			
+			
+			/*if(document.fr.gender[0].checked 
+					document.fr.gender[1].checked){ //gender에 [0]을 선택하지 않았다면..true/false가 아닌 undefined
+				alert("성별을 모두 체크한경우입니다"); 
+				물론이런경우는 없다,,,,체크박스이기때문에*/
+				
+				
+			//alert("fun2() 실행");
+			//라디오버튼(submit)된 경우 :	
+			document.fr.submit();
+		}
+			
+		function fun3(){
+			//'submit'이벤트 발생시 
+			//채크박스가 하나이상 선택이 안된경우 페이지 이동을 하지 않는다(submit x)
+			if(document.fr.hobby[0].checked==false && document.fr.hobby[1].checked==false
+				&& document.fr.hobby[2].checked==false){
+				alert("취미를 선택하세요");
+				document.fr.hobby[0].focus();
+				return false;// 리턴자체는 펑션자체를 종료하는것이지 서브밋을 종료하는게 아니다(return false:서브밋자체종료)
+			}
+			//된 경우 (submit 0)
+			document.fr.submit();
+			
+			
+		}	
+		}
+	
+	</script>
+</head>
+<body>
+	<h1>WebContent/js3/test4.html</h1>
+	<fieldSet>
+	<form action="a.jsp" method="get" name="fr" onsubmit="return fun3();">	
+	아이디:<input type="text" name="id">
+	<hr>
+	성별:<input type="radio" name="gender" value="남자" >남
+		<input type="radio" name="gender" value="여자" >여<br> <!--checked="checked"--> 
+	<!-- 원래는 성별체크시 둘다 체크할수 없기에..둘다 name을 부여:gender 라는 이름으로 라디오버튼을 그룹화.그냥 라디오버튼을 name없이 
+	그냥 추가한다면 남여중하나와 그것은 중복체크가 가능하다 -->
+	취미:<input type="checkbox" name="hobby" value="게임" >게임
+		<input type="checkbox" name="hobby" value="운동" >운동
+		<input type="checkbox" name="hobby" value="영화" >영화
+		<!-- 라디오버튼이나체크박스나name에다른이름을 주면그룹화가 풀리면서 라디오버튼의 의미가 사라짐. 물론 name의 이름을 다르게 할수는 있다. -->
+		<!-- radio나 checkbox=on말고 값을 넘기기 위해서는 value속성을 추가하면된다. -->
+	<hr>
+	<input type="submit" value="전달하기" ><!-- gender=on이전달된다.test3에는 name이라는속성이있는데 ...
+	파라메타...자바스크립트에서 name속성을통해 접근하기도하지만 이속성을통해 값이 넘어간다..주소줄에 이것이 없으면 넘어가지않는다. get일때-->
+	<input type="reset" value="초기화하기">	
+	<hr>
+	<!-- 이제 밑에 일반버튼을 만들어서 위의 체크박스등의 요소들에 접근 -->
+	<input type="button" value="확인하기" onclick="fun1();">
+	<input type="button" value="속성체크여부 판단하기" onclick="fun2();"> <!-- checked옵션을 다 빼놔야한다 -->
+	</form>
+	</fieldSet>
+
+
+
+
+
+</body>
+</html>

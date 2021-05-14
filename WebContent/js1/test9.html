@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//별그리기
+		// *
+		
+		// 1. * * * * *
+		
+		/* for(var i=1;i<=5;i++){
+			document.write(" * ");
+		} */
+	
+		// 2. 
+		// * * * * *
+		// * * * * *
+		// * * * * *
+		// * * * * *
+		// * * * * *
+		/* for(var i=1; i<=5; i++){
+			for(var j=1; j<=5; j++){
+				document.write(" * ");
+			}
+			document.write("<br>");
+		}
+		document.write("<hr>")
+		//3.
+		// *
+		// 
+		for(var i=1;i<=5;i++){
+			for(var j=1;j<=5;j++){
+				docuemnt.write(" * ");
+			}
+		} */
+		
+		
+		//가로로 네개찍고 별찍고줄바꾸기
+		/* for(var i=1;i<=5;i++){
+			for(var j=1;j<5;j++){
+				docuemnt.write(" * ");
+			}
+			document.write(" * <br>");
+		} */
+		
+		
+		//3. *
+		//   * *
+		//   * * *
+		//   * * * *
+		//   * * * * *
+	/* 	for(var i=0;i<5;i++){
+			for(var j=0;j<=i;j++){ //조건문에 이퀄기호가 있다는건 한바퀴더 돈다는 것이므로 이퀄기호는 없애주기
+				docuemnt.write(" * ");
+			}
+		//	document.write(" * <br>");
+		} */
+		
+		
+		
+		
+		//4.
+		//   * * * * *
+		//   * * * * 
+		//   * * * 
+		//   * * 
+		//   * 
+		
+		
+		//5.
+		//   * * * * *
+		//     * * * *
+		//       * * *
+		//         * *
+		//           *
+		//document.write("<hr>");
+		
+		
+		
+		
+		
+		//Q. 1~20까지 정수중에서 2의 배수가 아니거나 3의배수가 아닌
+		// 모든 수의 총합
+		var sum= 0;
+		for(var i=1;i<=20;i++){
+			if(i%2!=0 && i%3!=0){
+				sum=sum+i;
+			}
+		}//for문의 끝
+		
+		document.write("총합: "+sum);
+		
+		
+		
+		
+		
+		
+		
+		//Q.for -> while
+		for(var i=0 ; i<=10; i++){
+			for(var j=0;j<=i;j++){
+				document.write(" * ")
+			}
+			document.write("<br> ");
+		}
+		
+		/* var i=0 var j=0; 
+		while(i<=10){
+			for(var j=0;j<i;j++)
+					document.write(" * ");
+			j++;
+		} */
+		
+		
+		/* var i=0; 
+		while(i<=10){
+			var j=0;  //초기식은 해당 반복문위에 적는다. 그래야 한번 돌 때마다 j값이 초기화 된다.
+			while(j<=i){	//
+			document.write(" * ");	
+			j++;
+			}
+		} */
+		
+		
+		
+		
+		
+		//Q. 두개의 주사위를 던져서 나오는 눈의 합이 6이 되는 경우의 수를 모두 출력
+		//해당경우의 수를 몇개인지 출력
+		// 1 + 5 = 6 
+		var count=0;
+		for(var i=1;i<=6;i++){
+			for(var j=1;j<=6;j++){
+				if(i+j==6) {//=하나는 대입이므로 두개를 써야한다. 내가 몇개인지 푸는게 아니라 
+				//이거를 어떻게 계산할건지 컴퓨터에게 시켜야한다.
+					document.write("i:"+i,"j:"+j);
+				count++;
+				}//if끝
+			}
+			document.write("<hr>")
+		}
+		document.write("count:"+count);
+		
+		//1~6까지 숫자, 1~6까지 숫자
+		
+		document.write("<hr>");
+		
+		
+		
+		
+		
+		
+		
+		//Q. 2x+4y=10을 만족하는 모든 해를 구하시오
+		// (x,y는 정수/0<=x<=10,0<=y<=10)
+		for(var x=0; x<=10; x++){
+			for(var y=0;y<=10;y++){
+				if(2*x+4*y==10){
+					document.write("x는 "+ x+", y는" + y+"입니다<br>");
+				}//if의 끝
+			}//for의 끝
+		}
+		
+		
+		
+		
+		//1+(1+2)+(1+2+3)+(1+2+3+4)+(1+2+3+4+5)...(1+2+3+4.....+10)
+		
+/* 		var sum=0;
+		for(var i=1; i<=10; i++){
+			var count=0;
+			for(var j=1; j<=i; j++){
+				count+=j;
+			}
+			sum+=count;
+		}
+		
+		document.write(sum); */
+		
+		var sum=0;
+		var total=0;
+		
+		for(var a=1; a<=10; a++){
+			sum+=a;
+			total+=sum;
+		}
+		
+		document.write("total:"+total+"<br>");
+		document.write("<hr>");
+		
+		//Q. 1+(-2)+3+(-4)+5+(-6)+...
+		// 총합이 100이상의 되는 숫자 계산하시오
+		var sum=0;
+		for(var i=1;true;i++){
+			
+			if(i%2!=0) {
+				sum+=i;}
+			else{
+				sum-i;}//if-else의 끝
+			if(sum==100){
+				document.write("sum="+sum+"<br>");
+				document.write("i="+i+"<br>");
+				break;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/* 		var sum=0;
+		var s=1; // 부호(+/-)
+		var num=0;
+		
+		for(var i=1;true;i++,s=-s){
+			num = s * i;
+			sum += num;
+			
+			if(sum>=100){
+				document.write("sum="+sum);
+			}
+		}
+		
+		
+		
+		var sum=0;
+		var s=1; // 부호(+/-)
+		var num=0;
+		
+		for(var i=1;sum<100;i++,s=-s){	//반복문을 실행하는 코드는 조건문이 참일때~ 이지 그안의 변수가 하나여야한다는것이 아니다
+			num = s * i;
+			sum += num;
+		}
+		document.write("sum="+sum); */
+		
+		
+		
+		
+		document.write("<hr>");
+		//Q. 피보나치수열
+		// [1 1 2 3 5 8 13 .......]
+		// * 첫번째 두번째 수는 항상1
+		// * 세번째부터는 바로 앞에 두수의 합으로 계산
+		// => 10번째까지 피보나치 수열을 출력
+		
+		/* var num1=0; var num2=0;
+		var num3=0;
+		for(var a=1;a<=10;a++){
+			
+			num3=num2+num1;
+			num1=num2;
+			num2=num3;
+			document.write(num(A+1));
+		}
+		
+		
+		for(var i=1; i<=10; i++){
+			if(i==1){
+				document.write(1+" ");
+			}else if(i==2){
+				document.write(1+" ");
+			}else{
+				//앞의 숫자 2개를 더해서 출랙
+				// num1   num2    num3
+				//  3      1   1    2
+				//  4      1   2    3
+				//  5      2   3    5
+				//  6      3   5    8
+				//  7      5   8    13
+				//  8      8   13   21
+				//  9      13  21   34
+				//  10     21  34   55
+				
+			}
+		} */
+		
+		
+		var num1=1; var num2=1; var num3=0;
+		document.write(num1+" "+num2+" ");
+		
+		for(var i=0;i<8;i++){
+			num3=num1+num2;
+			document.write(num3+" ");
+			num1=num2;
+			num2=num3;
+		}
+		
+		document.write("<hr>");
+		
+		
+		//랜덤값 Math.random()
+		//0 <= Math.random() <1.0 실수 랜덤값
+		document.write( Math.random()+ "<br>");
+		
+		//0*10 <= (Math.random()*10) < 1*10
+		document.write( Math.random()*10+ "<br>");
+		document.write( Math.floor(Math.random()*10));	//Math.floor
+		
+		//1 <= Math.floor(Math.random()*10)+1 < 11
+		//Math.floor(Math.random()*x)+1   1에서 랜덤값x사이의 값
+		
+		//숫자맞추기 게임
+		//프로그램이 실행시 문제1개생성(1~100사이의 랜덤값-정수데이터)
+		//사용자가 정답을 입력(input->prompt)
+		//입력을 바탕으로 판단
+		//1)정답 > 입력 : "입력한 값이 작습니다 더큰값을 입력하세요"
+		//     < 입력 : "입력한 값이 큽니다 더 작은값을 입력하세요"
+		//     = 입력 : "정답입니다 도전횟수 00번"
+		
+/* 		//*사용자가 정답을 맞출때까지 진행/
+		var numA=Math.floor(Math.random()*100)+1;
+		//document.write("1~100까지의 정수중 값을입력하세요");
+		var num=prompt("숫자를 입력하세요");
+		var count=0;
+		if(numA!=num){
+			var num=prompt("숫자를 입력하세요");
+		
+			if(numA>num){
+				count++;
+				document.write("입력한 값이 작습니다 더큰값을 입력하세요");
+			}else(numA<num){
+				count++;
+				document.write("입력한 값이 큽니다 더 작은값을 입력하세요");
+			}
+		}else{
+			document.write( "정답입니다 도전횟수"+count+"번");
+		} */
+		
+		
+		
+		var quiz =Math.floor(Math.random()*100)+1;
+		var input =0;
+		var count= 0;
+		alert("정답: "+quiz);
+		
+ 		do{
+			input = prompt("정답을 입력하세요"); //반복문안에서 input받은것도 ~ 계속해서 input받아야하니깐~!
+			count++;
+			if(quiz>input){
+				alert("입력한 값이 작습니다 더큰값을 입력하세요")	;
+			}else if(quiz<input){
+				alert("입력한 값이 큽니다 더 작은값을 입력하세요");
+			}else{
+				alert("정답 도전횟수"+count+"수");
+				break;
+			}
+			
+		}while(true);
+		 
+		
+		
+		
+		// * 재귀함수호출 : 함수내부에서 다시 자신의 함수를 호출
+		function myfun(){
+			alert("test");
+			cnt++;
+			
+	//		if(cnt>=10) break;
+			if(cnt>=10) return;
+			myfun();   //무한루프이므로 제어문을 써줘야한다
+		}				// if절에서는 break쓰지 않으므로 return써줘야한다.
+		
+		
+		////////////////////////////////////////////////////////////
+		
+		//변수
+		// - 전역 변수 : 코드 전역에서 사용가능한 변수
+		// - 지역 변수 : 지역(block)에서 사용가능한 변수
+		
+		
+/* 		var a = 200;
+		document.write(a); */
+		
+		var a = 200;			//전역변수
+		
+		function testA(){
+			var a =300;
+		} 						//지역변수 : 해당함수가 생성하고 호출시 변수가 생성됨
+								//			함수 종료시 변수는 사라짐
+								//전역변수는 해당프로그램이 생성시 변수 생성, 프로그램이
+								//종료될때 변수는 사라짐(즉 전역변수는 이값을 계속기억하고 
+								//싶다면 전역변수 사용)		
+		testA();
+		
+		document.write(a); 
+		
+		//내장함수 (alert와 같은~~!)
+		//자바스크립트에 포함되어 있는 함수
+		//alert();, prompt();, Number();, Boolean();
+		//그냥 불러다 쓸수 있는것..내가만들어 쓰는게 아니라!
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

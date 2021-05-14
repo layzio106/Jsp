@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>WebContent/js1/test4.html</h1>
+	
+	<h2>연산자</h2>
+	<h3>1.산술연산자</h3>
+	<p>676
+		+ -  * / %
+	</p>
+	<script type="text/javascript">
+		//A+B
+		//numA,numB 변수생성후 각각100,200 숫자료 초기화
+		//=>두개의 변수를 사용해서 산술연산 실행후 결과 출력
+		var numA ;
+		numA = 100 ;
+		var numB = 200 ;
+		document.write( numA+numB +"<br>");
+		document.write( numA-numB +"<br>");
+		document.write( numA*numB +"<br>");
+		document.write( numA/numB +"<br>");
+		document.write( numA%numB +"<br>");
+		
+		//과일300개, 상자의 크기 : 5개씩 저장가능한 상자를 사용해서 포장하려하낟.
+		//이때 필요한 상자의 개수는 몇개인가?
+		document.write("_____________________________________________________<br>");	
+		var banana=300 ;
+		var sizeOfBox=5;
+		document.write( "필요한 상자의 갯수 : "+ (banana/sizeOfBox) +"개<br>" );
+		
+		//475 -> ? -> 400, 123 -> ? -> 100, 948 -> ? -> 900
+// 		var numC = 475;
+// 		var numD=  475-(475/400)
+// 		document.write(numC	- (numC/(numC
+		
+		//1.3자리수 ->연산->백의자리만 남음
+		document.write(475/100);
+		//소수점 이하버림 (자바스크립트로 소수점이하버리는것)
+		//Math.floor();
+		//document.write(Math.floor(475/100)); //4
+		
+		document.write(Math.floor(475/100)*100); //4*100
+		document.write("<br>");
+		var num =475;
+		document.write("<br>");
+		document.write(Math.floor(num/100)*100);
+		document.write("<br>");
+		
+		
+		// 777->? ->771, 456->?->451
+		document.write("_____________________________________________________<br>");	
+		document.write("<br>");
+		// 777 -> 77.7 -> 77 -> 770 -> 771
+		var numD=123;
+		document.write(Math.floor(numD/10)*10+1);
+		
+		
+	</script>
+	
+	
+	<h3>2.대입연산자</h3>
+	<p>
+	 변수에 데이터를 정하는 연산
+	 =(대입연산자), +=, -=, *=, /=, %=(복합대입연산자)
+	</p>
+	
+	
+	<script type="text/javascript">
+// 		A += B; <=> A=A+B (누적합)
+		var num1= 100;
+		var num2= 3;
+		
+		document.write("num1 : "+num1+", num2 : "+num2 +"<br>");
+		document.write((num1 += num2)+"<br>");
+	
+		document.write("num1 : "+num1+", num2 : "+num2 +"<br>");
+		document.write((num1 += num2)+"<br>");
+		
+		document.write("num1 : "+num1+", num2 : "+num2 +"<br>");
+		document.write((num1 += num2)+"<br>");
+		
+		//자바스크립트를 사용해서 테이블표작성하기
+		//테이블표는 html 그런데 자바스크립트는 document.write라는 걸로 html나타낼수있다
+		
+		document.write("<table border='1'><tr><td>1</td><td>2</td><td>3</td></tr></table>");
+		
+		//<script> 바깥에 html코드써서 표만드는게 쉽지만 <td></td>사이에 변수가 들어가야할때는
+		//자바스크립트써야한다.
+		var tableTag="";
+		tableTag += "<table border='1'>";
+		tableTag += "<tr>";
+		tableTag +="<td>1</td>";
+		tableTag +="<td>2</td>";
+		tableTag +="<td>3</td>";
+		tableTag +="</tr>";
+		tableTag +="</table>";
+		
+		document.write(tableTag);
+		
+		//S+N =S, S+S=S처럼 문자열끼리쌓이므로 tableTag안에 테이블태그가 저장될수있다
+		
+
+	var name="이아연";
+	var age="36";
+	var loc="부산";
+	document.write("<table border='1'><tr><td>이름</td><td>"+name+"</td></tr>	<tr><td>나이</td><td>"+age+"</td></tr><tr><td>사는곳</td><td>"+loc+"</td></tr><table>");	
+	
+	
+	var tableMe=""// 공백문자""
+	var name2="이아연"
+	var age2="36"
+	var loc="부산";
+	tableMe+="<table border='2'>";
+	tableMe+="<tr>";
+	tableMe+="<td>이름</td><td>"+name2+"</td>"
+	tableMe+="</tr>"
+	tableMe+="<tr>";
+	tableMe+="<td>이름</td><td>"+age2+"</td>"
+	tableMe+="</tr>"
+	tableMe+="<tr>";
+	tableMe+="<td>이름</td><td>"+loc+"</td>"
+	tableMe+="</tr>"
+	tableMe+="</table>";
+	
+	document.write(tableMe);
+	
+	
+	
+	</script>
+	
+	
+	<hr>
+	<table border="1">
+		<tr>
+			<td>1</td><td>2</td><td>3</td>
+		</tr>
+	</table>
+	
+	<h3>증감연산자 (단항연산자) </h3>
+	<p>
+	 숫자 데이터를 1증가,1감소 시키는 연산자
+	 ++A/A++, --A/A--
+	</p>
+	
+	<script type="text/javascript">
+	 var A = 100;
+	 ++A;	// (전위연산)	: 변수의 값을 1증가하고 사용한다
+	 document.write("A : "+A+"<br>");
+	 A++;	// (후위연산) : 변수의 값을 사용하고 1증가
+	 //변수의 값을 사용한다? 세미콜론을 만났을때
+	 document.write("A : "+A+"<br>");
+	 
+	 A=100;
+	 document.write("++A : "+(++A)+"<br>");
+	 document.write("A++ : "+(A++)+"<br>");
+	 document.write("A :"+A);
+	 
+	++A;
+	++A;
+	++A;
+	document.write("<br>");
+	document.write("A :"+A+"<br>");
+	 
+	
+	</script>
+	
+	
+	<h3>4.비교연산자</h3>
+	<p>
+	 두개의 데이터를 비교하는 연산. 해당연산의 결과는 Boolean-true/false
+	 	>   <   >=   <=  ==  !=       ===  !==
+<!-- 	[>=]와 [=>]동일한가? -->
+<!-- 	크거나 같다...뒤의것은 쓸수없다. -->
+<!-- 	연산의경우, =대입연산이기때문에 오른쪽에 연산만 있어서는 안된다 -->
+
+	A===B 값과 데이터가 둘다같다(true반환)
+
+	</p>
+	
+	<script type="text/javascript">
+	 var A =10;
+	 var B=5;
+	 document.write("A :"+A+", B :"+B+"<br>");
+	 document.write("A>B :"+ (A>B)+"<br>");
+	 
+	 
+	 A=100;
+	 B=100;
+	 //데이터타입상관없이 변수의 값만비교 
+	 document.write("A ==B :"+(A==B)+"<br>");
+	 document.write("A>B :"+ (A==B
+			 )+"<br>"); 
+	doumumemt.write("")
+	</script>
+	
+	<h3>5.논리연산자</h3>
+	<p>
+	 논리값(t/f)을 사용하여 연산을 처리하는 연산자
+	 &&(AND) ||(OR) !(NOT)
+	</p>
+	
+	<script type="text/javascript">
+		//논리표
+		//A		B		&&		||
+		//t		t		T		T
+		//t		f		F		T
+		//f		t		F		T
+		//f		f		F		F
+		
+		
+		//&&	:두개의 조건이 모두 참일때만 참
+		//||	:둘중에 하나라도 참일때 참
+		
+		//A		!A
+		//T		F
+		//F		T
+		
+		//!		:해당 데이터의 반대값
+		
+	</script>
+	
+	<h3>6.삼항(조건)연산자</h3>
+	<P>
+	 조건식의 결과에 따라서 실행하는 코드가 변경되는 연산자
+	 조건식? 실행문1(참) :실행문2(거짓);
+<!-- 	 if문/삼항연산자 중 프로그램코드는 삼항연산자가 월등히빠르다 -->
+	</P>
+	
+	<script type="text/javascript">
+	 var A =10;
+	 var B =20;
+// 	 document.write(A > B); 
+// 	 document.write(A>B? "A가크다":"B가크다");
+	 document.write((A>B)? "A가크다<br>":"B가크다<br>");
+	 
+	 //변수 A값이 50보다 크면 ->"50보다 큰수", 50보다 작으면 ->"50보다 작은수"
+	 document.write((A>50)? "50보다 큰수<br>":"50보다 작은수<br>");
+	 
+	 //변수 B값이 양수/음수 판별
+	 document.write((B>0)? "양수<br>":"음수<br>");
+	 
+	 //변수 B의 절대값 계산하기
+	 //양수 ->양수, 음수 ->양수
+	 document.write((B<0)? B*(-1)+"<br>":B+"<br>");
+	 
+	 
+// 	 var inputData = prompt("메세지","값");
+// 	 alert(inputData);
+	 
+	 //프롬프트 사용해서 과일 개수 입력, 한상자에 5개씩 포장가능 박스를 사용해서
+	 //포장할때 필요한 상자의 개수를 입력
+	 //10 -> 2개 . 11 -> 3개
+	 
+	 var countOfFruit=prompt("과일은 몇개입니까","값");
+	 
+// 	 alert(Math.ceil(countOfFruit/5));
+	 alert((countOfFruit%5==0)? countOfFruit/5: Math.floor((countOfFruit/5)+1));
+// 	 document.write("필요한 상자의 갯수:"+(Math.floor(countOfFruit/sizeOfBox) + (countOfFruit%sizeOfBox>0? 1:0));)
+	  
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

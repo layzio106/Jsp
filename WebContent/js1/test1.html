@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부파일을 사용한 자바스크립트 -->
+<script src="../js/myScript.js"></script>
+
+
+<script type="text/javascript">
+	// alert("안녕하세요!");
+	// ctrl + shift + c 한줄짜리주석 (해제)
+	// 주석문 : 비실행문, 작동하지 않는 코드
+	/*
+		여러줄 짜리 주석문(ctrl + shift +/)
+		그러나 한줄짜리 주석을 많이쓴다
+	*/
+	
+	//자바스크립트 : HTML에서 특정 동작에 대한 반응을 처리하기위한 언어
+	//JQuery(제이쿼리) : 자바스크립트 라이브러리(확장판)
+	
+	//*HTML안에 JS가 포함되어 있음
+	// 1) 인터프리터언어( <->컴파일 언어, 그래서 자바랑 자바스크립트는 실행순서다름 .java파일을 ,class로컴파일후 그 class파일을 읽어들임 )
+// 		=>코드를 읽어서 순차적으로 실행(에러가 발생한 코드 이후는 실행x, 인터프리터는바로읽어들이니빠르지만기본문법에러에서타격. 물론 둘다 에러시 그 이후코드실행)
+// 되지 않지만 자바처럼 컴파일되는건 예외처리등..으로 처리
+// 2)자바스크립트는 클라이언트 스크립트 언어(왜 클라이언트언어가 필요? 시스템효율,,서버도컴퓨터.들어가는장비한정적.단가.즉 서버에서 할일을 클라이언트가 해주기에
+// 		일정수준의 언어를 볼수있다. ex)폰한대가 왠만한컴퓨터한대보다낫다? 클라이언트언어의발전으로 효율성극
+	//3)객체기반언어
+	//4)오픈소스 언어
+	//=>외부의 파일을 사용해서 처리가능(그렇지만 완전히 숨길수없기에 오픈된다.겉으로작동하는건드러나지만 로직은 숨겨짐)
+	//5)다양한 라이브러리(nodeJS JQuery)
+	//우리나라는 관습적으로 head에 자바스크립트쓰지만 최근들어 body에 쓰는경향있다.
+	
+</script>
+	<script type="text/javascript">
+		alert("head실행!");
+	</script>
+	
+
+</head>
+
+<body>
+
+	<h1>WebContent/js1/test1.html</h1>
+	<!-- a태그를 사용하여 자바스크립트를 실행 -->
+	<a href="javascript:alert('a태그');">자바스크립트(하이퍼링크)</a>
+	<hr>
+	
+	<!-- button태그를 사용해서 자바스크립트를 실행 -->
+	<input type="button" value="버튼" onclick="alert('버튼');">
+	
+	<!-- 자바스크립트 태그를 사용 자바스크립트 실행(header,body) -->
+	<script type="text/javascript">
+		alert("body실행!");
+	</script>
+	
+	
+</body>
+</html>

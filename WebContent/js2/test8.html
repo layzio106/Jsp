@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//window - location 객체 : 브라우저의
+	// =>(window).location
+	//.href .protocol .hostname .host .port .search
+	
+	
+	function fun1(){
+		alert("href : "+location.href) //location.href는 상단의 url정보이므로 원하는 곳으로 갈수 있게된다.
+		alert("protocol :"+location.protocol);
+		alert("hostname :"+location.hostname); //로컬호스트는 내IP주소있는 컴퓨터인데.. 내가 인터넷주소상에서 정보주고받으려면 주소가 필요한데,
+		alert("host :"+location.host); //웹상에서 해당컴퓨터를 호스트라 한다.. 지금은 이 브라우저를 실행하고 있는 톰캣이라는 서버가 호스트가 될것이다
+		alert("port :"+location.port);
+		alert("search :"+location.search);
+	}
+	
+	function fun2(){
+		//속성을 변경하는 location.href을 변경해서 test1.html페이지로 이동
+		location.href="../웹프로그래밍.txt";
+	}
+	
+	location.reload();  //페이지새로고침(페이지내부에서는 계속되는것이므로 버튼으로 만들어서 이벤트로 진행)
+	location.replace("test1.html"); //페이지 이동 (=location.href)
+</script>
+</head>
+<body>
+	<h1>WebContent/js2/test8.html</h1>
+
+	<input type="button" value="location 속성값확인" onclick="fun1();"> <br>
+	<input type="button" value="location 속성값변경" onclick="fun2();"> <br>
+</body>
+</html>

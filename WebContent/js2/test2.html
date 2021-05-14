@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<script type="text/javascript">
+		
+		//내장객체 - 날짜객체 (Date)
+		
+		//날짜정보를 저장하고 있는 객체를 생성
+		new Date();	//이를 객체라고 부르지만 사실 가비지라고 부른다 어떤데이터를 창고에 담아놓은것
+		var d = new Date();	//그 데이터의 창고위치를 알때는 값을 참조할수 있기에 쓰레기값이 아니다(no 가비지)
+		//가비지생성을 하지 않아야 한다.
+		//가비지(메모리에서 쓰레기값)
+		//가비지를 관리하는 gc(가비지컬렉터)가 그 영영ㄱ을 풀어주면
+		//c같은경우는 가비지만들고 해제하는 코드까지써야하지만(필수) jsp같은경우는 가비지컬렉터가
+		//있어서 이가비지를 관리해준다
+		//그러나 이가비지컬렉터가 개발자 마음대로 움직여주지는 않는다
+		//ex.가비지가 60%네?..이걸 지금우리단계에서는 튜닝할수없다. (위의 휴지통같은경우..) general-show hip status.
+		//c언어 같은경우 메모리할당하고 해체하는 코드자체(다이렉트로 데이터를 주고받을수있기때문에)가 잘못되어있으면 작동하지 않는다.
+		//그래서 실시간으로 작동해야하는 프로그램에선 자바언어를 잘쓰지않는다(가비지컬렉터..)
+		//그래서 제조업등에서 c언어를 쓰는이유
+		alert("날짜 정보: "+d);
+		
+		
+		
+		//현 시스템의 날짜, 시간정보를 저장하는 객체 
+		//var d= new Date();
+		var d1=new Date(2021,5,6);	 //특정날짜정보를 저장하는 객체(년,월-1,일)
+		alert(d1);					//0~11까지가 있다(1월을 0으로 인식하므로)
+		
+		var d2=new Date("2021/5/6");
+		alert(d2);
+		
+		var d3=new Date(2021,5,6,9,30,0); //년,월,일,시,분,초
+		alert(d3);
+		
+	//3school
+	//오늘은 00년 00월 00일 00요일
+		new Date();
+		document.write("오늘은"+d.getFullYear()+"년");		
+		document.write("오늘은"+(d.getMonth()+1)+"월");
+		document.write("오늘은"+d.getYear()+"년");
+		
+		var myDay="";
+		switch(d.getDay()){
+		case 0:
+			myDay="일";
+			break;
+		case 1:
+			myDay="월";
+			break;	
+		case 2:
+			myDay="화";
+			break;	
+		case 3:
+			myDay="수";
+			break;	
+		case 4:
+			myDay="목";
+			break;	
+		case 5:
+			myDay="금";
+			break;	
+		case 6:
+			myDay="토";
+			break;
+		
+		}
+		
+		document.write("오늘은"+d.getDay()+"일");	
+		//getDay 0~6까지 출력...목요일이었음좋겠는데 4요일이라고 나온다
+		//0~6까지 표시하는 동작
+		//자바스크립트가 책이 필요없는 이유가 이런것...책을 보나 여기와서 뒤져보나 같은것... w3school. 너무상세한것
+
+		document.write("<hr>");
+		var num=d.getDay();
+		function getDay(num){
+			//해당요일 정보를 바탕으로 요일을 출력(x), 요일을 리턴(0)
+			var myDay="";
+			switch(num){
+			case 0:
+				myDay="일";
+				break;
+			case 1:
+				myDay="월";
+				break;	
+			case 2:
+				myDay="화";
+				break;	
+			case 3:
+				myDay="수";
+				break;	
+			case 4:
+				myDay="목";
+				break;	
+			case 5:
+				myDay="금";
+				break;	
+			case 6:
+				myDay="토";
+				break;
+			
+			}
+			return myDay;
+		}
+				
+		document.write(getDay(d.getDay()));
+				
+				
+		//이렇게 함수를 쓰는 목적은 한번만들어놓으면 그때그때 사용할수 있다.. 요일반환하는것.
+		//whatTime() =>"2021/5/6 5시 37분 00초"출력하는 함수를 만들기
+		
+				
+				
+		var toDay = new Date();
+		
+		document.write(toDay.getYear()+"/");
+		document.write(toDay.getMonth()+1+"/");
+		document.write(toDay.getDate()+" ");
+		document.write(toDay.getHours()+"시");
+		document.write(toDay.getMinutes()+"분");
+		document.write(toDay.getSeconds()+"초<br>");
+		
+		//디데이계산기
+		//특정일 객체 - 오늘(현재) 객체
+		
+		var Dday = new Date(2021,11,31); //21-12-31
+		var today= new Date();
+		
+		document.write("dday : "+Dday +",today :"+today)
+		//실제로 객체가지고 뺄수 있느냐?
+		var result = Dday = today;
+		//alert(typeof result); =>날짜를 밀리세컨드로 표시
+		
+		//1초 =1000msc
+		//1분=1000*60
+		//1시간=1000*60*60
+		//1일=1000*60*60*24
+		
+		//=> Dday 계산하기
+		alert(Math.cell(result/(1000*60*60*24))+"일 남았습니다");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

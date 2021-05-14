@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+		
+	
+	
+	
+		//누적합
+		//+= +반복문
+		//1~100 까지의  합 계산
+		var sum =0;
+		for(var i=1;i<=100;i++){
+			//1+2+3+4+5+6..+100
+			sum += i;
+		}
+			document.write(sum);
+		
+		
+			
+		document.write("<hr>")	
+		sum=0; i=1;
+		while(i<=10){
+			sum+=i;
+			i++;
+		}	
+			
+		document.write(sum);	
+			
+		
+		//
+		for(var i=1;i<10;i++){
+			if(i%2 !=0){
+				document.write(i+" ");
+			}
+		}	
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		// 보조제어문 : break, continue(반복문에서 break..가장가까운 반복문 하나를 탈출)	
+		// continue : 반복문의 루프를 한번 건너뛰어 반복
+		document.write("<hr>")
+		//i의값이3일때 종료하고싶다.
+		for(var i=1;i<=10;i++){
+			//document.write(i+" "); ★
+			if(i%3==0){				//i==4일때로 고치는것보다 위처럼위치를 바꾸는게 
+				continue;				//반복문을 4바퀴->3바퀴도는 것. 로직.
+			}
+			document.write(i+" ");
+		}
+			
+	
+		//continue문 : 반복문의 루프를 한번건너뛰어 다음 동작을 실행
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//무한반복문 : 항상 조건이 참이 되는 반복문( 반복횟수를 모를때 쓴다 하지만 제어하기 힘들기때문에 보조제어문과함께쓴다 )
+		//for( ;true; ){  //조건식에 true가 나오는 식을 적을때(1<=10) or 아무것도 쓰지않을때
+		//	document.write("안녕<br>");
+		//}
+				
+		
+		//while(true){
+		//	
+		//}
+		
+		
+		//do{
+		//	
+		//}while();
+		
+		for(var i=1;true;i++){		//★★★★★★지문인식로직도 무한루프..사용자가 지문인식할때까지!★★★★★★
+			document.write(i+"<br>");
+			
+			if(i==100) break;
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

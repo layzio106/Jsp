@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	//1.자바스크립트는 대/소문자를 구분
+	//2.실행문의 끝에는 ;(세미콜론을 사용)
+	//3.한줄에 한문장만 처리
+	//4.중괄호는 짝이 맞아야함 (){}[]
+	//5.문자형 데이터 "",'' 모두사용가능(겹쳐서 사용시 주의/즉 자바는 둘 구분/)
+	
+		//출력문 - 화면에 출력하는 출력문
+		document.write("안녕하세요~(JS)");
+		//출력문 - 콘솔창에 출력하는 출력문(화면의 console)
+		console.log("안녕하세요~!(log)");
+		//document.write(""안녕"");
+		document.write('<br>"안녕"');
+		//"안녕"은 html코드이다 줄바꿈원하면 <br>
+		document.write('<br>'+(100+200));
+		//document.write(<br>100+200);
+		
+		//[+] 기호 : 1)연산자 2)연결자
+		
+		//1)연산자
+		//100+200 =>300
+ 		//200+200 =>400 		
+ 		//...
+ 		// => 숫자 + 숫자 => 숫자
+ 		//알고리즘 : 해당로직으로 어떤규칙을 찾아 내야함
+
+		//2)연결자
+		//"test"+100 => "test100"
+		//100+"test" => "100test"
+		//...
+		// => 문자 + 모든타입 => 문자
+
+		//100 + 200 = 300
+		// N  S  N    S (연산)
+		// => 화면에 결과출력 [100+200=300]
+		document.write('<br>'+100+"+"+200+"="+(100+200));
+		//document.write(300);
+
+		//이스케이프 문자
+		document.write("<br>");
+		document.write("안녕         하세요");
+		document.write("<br>");
+		document.write("안녕&nbsp;&nbsp;&nbsp;&nbsp;하세요");
+		document.write("<br>");
+		document.write("안녕\t\t하세요");
+		document.write("<br>");
+		document.write("안녕\n하세요");
+		//alert("안녕\n 하세요");
+		
+		document.write("<br>");
+		//document.write("C:/Program Files/Java/jdk1.8.0_151/bin");
+		//document.write("C:\\Program Files\\Java\\jdk1.8.0_151\\bin");
+		document.write("<br>");
+		
+		document.write("\"안녕\""); //쌍따옴표나 싱클따옴표앞에 역슬러시쓰면 이 그대로 쓸수있다.
+		
+		//해당 역슬러시는 이스케이프문자의 준비를 하는데
+		
+		
+		
+		
+		
+	</script>
+
+
+
+</head>
+<body>
+	<h1>WebContent/js2/test2.html</h1>
+	안녕하세요~(HTML)
+
+
+
+</body>
+</html>

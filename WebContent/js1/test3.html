@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	// 변수 : 변화가 있는 데이터(값)을 저장하는 공간(실행은 주기억장치,메모리)
+	// 그냥 데이터만 있는것과 변수에 담아 놓는것은 다른다(그냥 데이터만 있는것:리터럴/변수:공간)
+	
+	// 자바스크립트이 데이터타입 : 문자형(String), 숫자형(Number),논리형(Boolean),Null
+// 	=> 데이터타입에 따라서 데이터를 처리하는 방식이 다름
+//  자바스크립트는 자바에 비해 쉽게 사용할수?
+// 		변수사용
+// 		1:변수선언
+// 		2:변수 초기화
+// 		3:변수 사용
+
+// 	int 변수명; (x)
+// 	var 변수명;                 //변수선언 :        데이터가 저장되는 공간(메모리를 할당)
+// 	변수명 = 데이터값;             //변수초기화 :       메모리를 초기화(같다는 뜻이 아니라 대입한다)
+	
+// 	document.write(변수명);     //변수사용 :        메모리의 값을 가져다 사용 
+	
+// 	숫자1개 저장하는 변수, 이름: myNumber
+// 	var myNumber;			
+// 	myNumber = 100;
+	var myNumber = 100; 	  //변수선언과초기화를 같이하는것은 위의 따로하는것과 다른것
+	
+	// * var : 변수의 타입, 선언/선언과 동시에 초기화 할때만 사용
+	document.write(myNumber +"<br>");  //변수를쓴다?      '변수의 값을 토출한다'
+	
+	myNumber = 200;
+	document.write(myNumber + "<br>");
+	
+	// * 이름 작성법
+	// 한글이름(x)
+	// 영문자, 숫자 조합구성 /[ _ ],[ $ ] 2개는 사용가능
+	// 변수의 역활을 의미를 표현 => 명사형태로 표현 / 공동개발의 경우가 많으므로 
+	// 카멜표기법 : 이름을 작성할때 2개이상의 단어를 합성해서 사용하는 경우
+    // 연결되는 단어의 첫글자를 대문자로 표시
+	
+    var a;	// (if 이름을 저장),
+	var name;	
+    
+    //myName 변수에 내이름 정보를 저장후 출력
+    // [이름: ***]
+    myName = '홍길동';
+    document.write("[ 이름 : "+ myName+ " ]<br>");
+    
+    //var if; 예약어는 변수의 이름으로 사용할수 없음.
+    var IF; // 쓸수는 있지만 안쓰는게 좋다.
+    
+    //문자형 데이형(String) : 문자데이터,숫자데이터를 ""/''로 감싸놓은 데이터 형태
+    var strData = "1000";
+    document.write(strData);
+    
+    var strData2 ="<h1>안녕하세요</h1>";
+    document.write(strData2); 
+    document.write("<h2>"+myName+"</h2>");
+    //document.write():  html에 표현하는것이므로 html태그인 h1등 표현가능
+    
+    //숫자데이터(Number)
+    var numData = 1000;
+   
+    
+    
+    var numData = '2000'; 	//문자형으로 표현된 데이터는 숫자로 변경 가능
+    Number('2000');
+    document.write(Number('2000')+1+"<br>");
+    //()값이 문자인지 숫자인지 알아보기위해 +1 값을 해본다
+    //Number("a") a는 숫자여야한다
+	
+    document.write(-1234+"<br>");
+    document.write(3.4567+'<br>');
+    
+    
+    //논리형 데이터(Boolean) :참(true),거짓(false)를 나타내는 데이터형태
+    document.write(false+"<br>");
+    document.write(true+"<br>");
+    
+    document.write(10>20);//비교연산의 결과는 항상 논리형 데이터
+    document.write("<br>");
+    document.write(Boolean(0)+"<br>");	
+    document.write(Boolean(1)+"<br>");
+    
+    // Boolean(값) : 해당데이터의 논리데이터값을 리턴(계산)
+    // => 숫자 0, null, undefined 타입을 입력시 ->  false
+    // => 그 외 모든데이터 ->   true
+    
+    // null . undefined
+    // null -> 값이 없음을 나타내는 데이터
+    // undefined -> 값이 등록되어 있지 않은 경우의 데이터(초기화x)
+    
+    var data =null;
+    document.write(data);
+    document.write("<br>");
+    var data2;
+    document.write(data2);
+    //data는 초기화는 되어있기에 내마음대로 써도된다는 것.data2에는 어떤값이 있는지 모른다
+    
+    
+    //우리가 일일이 데이터타입할수 있지만 데이터타입확인가능
+	//     데이터 타입을 확인
+	// type of 변수/데이터
+	document.write("<br>");
+    document.write(typeof "홍길동"+"<br>");
+    document.write(typeof myName);
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

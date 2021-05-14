@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	//window-document-form태그
+	
+	//form 태그의 접근방식
+	//데이터입력방식중 가장많이 쓰는것이 form태그
+	// 속성을 가지는것 action 도큐먼트상에서 구분하는게 name
+	// name없으면 그게 form[0]
+	// 그것도 모르더라도 jquery쓰거나 id값가지고 접근가능하다
+	//form태그를 전달하는 게 그안에 input태그만들어서 submit으로 전달하는것
+	//submit자체는 뭔가전달하는게 전제..그래서 일반버튼을 서브밋으로
+	//submit버튼을 form으로 제어
+	//1) (window.)document.forms[0].속성
+	//2) (window.)document.form태그의 name.속성
+	//속성을 어떻게 아는가? form후에 ctrl치고 스페이스바치면 나오는것...attribute
+
+	function fun1(){
+		alert(window.document.forms[0].action);
+		alert(window.document.fr.action);
+		alert(window.document.forms[0].method);
+		alert(window.document.fr.method);
+	} 
+	
+	/*function fun2(){
+		alert(document.forms[0].action);
+		alert(document.fr.method);
+		alert(document.forms[0].action);
+		document.fr.method="post";
+		document.submit.
+
+	}*/
+	function fun3(){
+		document.form[0].action="c.jsp"
+		document.method="get";
+		
+	//submit()사용 x => sumbit버튼 클릭(submit 이벤트발생중 )
+	}
+	
+	</script>
+</head>
+<body>
+	<h1>WebContent/js3/test2.html</h1>
+	<h2>form태그:특정페이지로 이동할때, input 타입데이터를 가지고 이동</h2>
+	<!-- alert(window.document.forms[0].action); -->
+	
+	<fieldset>
+	<legend>form태그</legend>
+	<form action="a.jsp" method="get" name="fr">	<!-- 기본적으로 get방식으로 간다 -->
+		<input type="text" name="id">
+		<input type="submit">
+		
+		<input type="button" value="form태그 속성확인" onclick="fun1();">
+		<!-- 해당버튼 클릭시 b.jsp페이지로 post방식으로 정보전달 -->
+		<input type="button" value="form태그 속성변경" onclick="fun2();" >
+		<input type="button" value="form태그 속성변경2" onsubmit="fun3();" >
+	</form>
+	</fieldset>
+	
+	<script type="text/javascript">
+	//window-document-form태그
+	alert(window.document.forms[0].action); //body가 만들어진 후이기 떄문에 순차적으로 실행되면 가능하다
+	</script>
+	
+</body>
+</html>

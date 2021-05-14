@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function func1() {
+		/* var id_value = document.forms[0].id.value;
+		console.log((id_value!="")?id_value:"null"); */
+		
+		console.log(document.forms[0].id.value);
+		console.log(document.forms[0].pw.value);
+		//document.forms[0].id.focus();
+		//document.forms[0].id.blur();
+		//document.forms[0].id.select();
+	}
+	function func2() {
+		var id_value = document.forms[0].id.value;
+		var pw_value = document.forms[0].pw.value;
+		var info_front = document.forms[0].info_num_front.value;
+		var info_back = document.forms[0].info_num_back.value;
+		var memo_value = document.forms[0].memo.value;
+		
+		if ((id_value != "") && (pw_value != "") && (info_front != "") && (info_back != "") && (memo_value != "")) {
+			if ((info_front != 6) || (info_back != 7)) {
+				alert("주민번호를 확인해 주세요");
+				document.forms[0].info_num_front.focus();
+				return;
+			}
+			document.forms[0].submit();
+		} 
+		else {
+			if (id_value == "") {
+				alert("아이디를 입력하세요");
+				document.forms[0].id.focus();
+				return;
+			}
+			if (pw_value == "") {
+				alert("비밀번호를 입력하세요");
+				document.forms[0].pw.focus();
+				return;
+			}
+			if (info_front == "") {
+				alert("주민번호 앞자리를 입력하세요");
+				document.forms[0].info_num_front.focus();
+				return;
+			}
+			if (info_back == "") {
+				alert("주민번호 뒷자리를 입력하세요");
+				document.forms[0].info_num_back.focus();
+				return;
+			}
+			if (memo_value == "") {
+				alert("하고싶은 말을 입력하세요");
+				document.forms[0].memo.focus();
+				return;
+			}
+		}
+	}
+	function func3() {
+		var id_value = document.forms[0].id.value;
+		var pw_value = document.forms[0].pw.value;
+		var info_front = document.forms[0].info_num_front.value;
+		var info_back = document.forms[0].info_num_back.value;
+		var memo_value = document.forms[0].memo.value;
+		
+		if ((id_value != "") && (pw_value != "") && (info_front != "") && (info_back != "") && (memo_value != "")) {
+			if ((info_front != 6) || (info_back != 7)) {
+				alert("주민번호를 확인해 주세요");
+				document.forms[0].info_num_front.focus();
+				return;
+			}
+			document.forms[0].submit();
+		} 
+		else {
+			if (id_value == "") {
+				alert("아이디를 입력하세요");
+				document.forms[0].id.focus();
+				return;
+			}
+			if (pw_value == "") {
+				alert("비밀번호를 입력하세요");
+				document.forms[0].pw.focus();
+				return;
+			}
+			if (info_front == "") {
+				alert("주민번호 앞자리를 입력하세요");
+				document.forms[0].info_num_front.focus();
+				return;
+			}
+			if (info_back == "") {
+				alert("주민번호 뒷자리를 입력하세요");
+				document.forms[0].info_num_back.focus();
+				return;
+			}
+			if (memo_value == "") {
+				alert("하고싶은 말을 입력하세요");
+				document.forms[0].memo.focus();
+				return;
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h1>WebContent/js3/test3.html</h1>
+	<fieldset>
+		<legend>정보입력 form</legend>
+		<form action="test.jsp" onsubmit = "func3()">
+			아이디 : <input type="text" name="id"/><br>
+			패스워드 : <input type="password" name="pw"/><br>
+			주민등록번호 : <input type="text" name="info_num_front"/> - 
+			<input type="password" name="info_num_back"/><br>
+			하고싶은말 <textarea rows="5" cols="30" name="memo"></textarea><br>
+			<hr>
+			<input type="submit" value="정보 입력"/>
+			<input type="reset" value="정보 초기화"/>
+			<hr>
+			<input type="button" value="속성 확인" onclick="func1()"/>
+			<input type="button" value="값 확인 후 이동" onclick="func2()"/>
+		</form>
+	</fieldset>
+</body>
+</html>

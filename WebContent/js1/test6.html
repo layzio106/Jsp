@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//prompt(); 로그인 처리로직
+		//본인 ID,PW 정보(DB->변수) 지금은 DB없으니 변수로 대신 가져와보자
+		//prompt()사용해서 ID,PW 정보를 입력받기
+		// ID -> 입력된 ID, 저장된 변수 ID 같은지 체크
+		//1) 0 (회원) => 본인의 비밀번호를 체크
+				// =>1)0 본인 =>"ooo님 로그인성공!"
+				// =>2)X 본인(비밀번호오류)=>"비밀번호 오류!"
+		//2) X(비회원) => 메세지 출력"아이디 정보가 없음!"
+		
+		/* var ID="lay" 
+		var PW="zio"
+		
+		var ID2=prompt("ID를 입력하세요");
+		if(ID2!=ID){
+			alert("아이디정보가 없음");
+		}else if(ID2==ID){
+			var PW2=prompt("PW를 입력하세요");
+			if(PW2==PW){
+				alert(ID+"님 환영합니다");
+			}else{
+				alert("비밀번호 오류");
+			}
+			
+		} */
+		
+		//location.href="페이지주소";
+		////////////////////////////////////////////////////////////
+		//location.href="http://www.naver.com";
+		
+		//사용자가 포털사이트의 이름을 입력시 해당 페이지로 이동
+		//naver,daum,nate,google // +대문자,한글
+		
+		var potal=prompt("포털사이트의 이름을 입력하세요");
+		var url="www.naver.com";
+		//각각의 코드마다
+			switch(potal){
+			case "네이버":
+			case "naver":
+			case "NAVER":
+			//location.href="http://www.naver.com";
+			break;
+			case "daum":
+			case "DAUM":
+			case "다음":
+			url=
+		
+		default:
+			alert("처리불가능한 페이지입니다")
+			
+		if(url){	//url!=null,해당주소가 있을때
+		location.href="http://"+url;
+		}	
+		
+	</script>
+</head>
+
+<body>
+	<h1>WebContent/js1/test6.html</h1>
+</body>
+</html>

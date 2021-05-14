@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		// 문자열 (String)
+		//var 변수 = new String(문자데이터); -> 문자객체
+		//var 변수= "문자열"; -> 문자상수
+		//둘다 문자열을 나타내는것이긴 한데 왜 두가지로 나눠쓰는가?
+		//자바에서 사용하려면 메모리에서 new한다@ 객체를 생성한다.
+		//모든 객체가 그렇게 참조된다 stack관 heal
+		//그럼 var 변수 ="문자데이터"는    new도 없는데? 또다른 공간에... 문자열을 저장하는 메모리 공간이 있다.
+				
+		var str1= new String("Hello");
+		var str2= "Hello";
+		
+		document.write(str1==str2);// 데이터타입상관없이 값만비교한다
+		document.write(str1===str2); // 데이터타입까지 같은가? 비교한다
+		document.write(typeof str1);
+		document.write(typeof str2); 
+		
+		//문자 객체 => 속성, 기능
+		
+		document.write("문자의 길이 :"+str1.length); //괄호가 없으니깐 함수가  아니라 변수이다.
+				
+		
+		//문자 스타일 변경함수
+		var msg ="itwillbusan";
+		document.write(msg+"<hr>");
+		document.write(msg.bold()+"<hr>");
+		document.write(msg.italics()+"<hr>");
+		document.write(msg.fontcolor("blue")+"<hr>");
+		document.write(msg.fontsize(20)+"<hr>");
+		document.write(msg.toUpperCase()+"<hr>");
+		document.write(msg.toLowerCase()+"<hr>");
+		
+		//대문자, 글자크기15, 빨강, 굵게 표현하기
+		document.write(msg.toUpperCase().fontsize(15).fontcolor("red").bold()+"<hr>");
+		// [. 연산자]를 사용해서 한번에 여러개의 함수를 실행 => 체이닝 기법
+		
+		
+		// 함수생성 -> 모든 문자가 굵게 표현, 글자색(파랑), 크기(10) 변경해주는 함수 생성
+		var result="";
+		//var msg = prompt("글자를 입력하세요");
+		function font(msg){
+			return (msg.bold().fontcolor("blue").fontsize(10)+"<br>");
+			 
+		}
+		
+		
+		/* font(msg);
+		document.write(font(msg)); */
+		
+		
+		document.write(font("안녕하세요"));
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//문자열 데이터 저장방식
+		//"Hello"
+		// H  e  l  l  o  하나의 덩어리로 저장되겠구나 생각하겠지만
+		// 0 |1 |2| 3| 4 | (index)		-배열도 이렇게 데이터를 한칸씩 저장하게 되어있다
+		// 인덱스는 이렇게 찾아가기 쉬우라고 만들어놓은것.
+		
+		//문자데이터 처리함수
+		//charAt (인덱스)
+		document.write("<hr>");
+		document.write(msg.charAt(0));
+		
+		// 문자객체.substring(시작인덱스,끝인덱스 앞까지);  슬라이스(from,to)
+		document.write(msg.substring(0,6));
+		document.write("<hr>");
+		
+		// 문자객체.substring(시작인덱스);
+		document.write(msg.substring(6));
+		
+		
+		//slice(시작인덱스, 끝인덱스 앞), substr(시작인덱스,갯수)
+		document.write(msg.slice(0,6));
+		document.write("<hr>");
+		
+		document.write(msg.substr(6,4));
+		
+		//itwillbusan
+		// -> 해당문자안에 알파벳 'b'가 있는지 없는지 체크
+		
+/* 		for(var i=0;i<msg.length;i++){
+			if(msg.charAt(i)==b){
+				alert("문자 있음");
+				break;	//b가 있는지 없는지가 체크하는것이므로 끝내는것이 좋다.
+			}
+		} */
+		
+		
+		//문자객체.indexOf("문자") : "문자"가 있으면 해당 문자의 위치인덱스 리턴
+		//               없으면? : -1 리턴
+				//즉 이함수를 호출시 0보다큰 숫자가 나오면 문자 포함 된것이고 -1나오면없는것
+		document.write("<hr>");		
+		document.write(msg.indexOf("b"));
+		
+		//document.write(msg.indexOf("b")>=0? "글자있음":"글자없음";)	//msg.indexOf("b")>-1 ?
+				
+		//문자 객체.lastIndexOf("문자");		
+		/* document.write(msg.lastIndexOf("")));
+		document.write("<hr>");	 */
+		
+		//문자 객체.split("문자,구분자");
+		msg = "a b c d e f g"; 
+		document.write(msg.split(" ",3)); //스페이스를 기준으로 나눌건데 그중 3개만 가져온다.
+		document.write("<hr>");	
+		document.write(msg.split(" "));
+		document.write("<hr>");	
+		document.write(msg.split(" ")[0]);
+		document.write("<hr>");	
+		document.write(msg.split(" ")[4]);
+		
+		
+		var jumin ="900101-1234567";
+		//주민등록번호에서 성별의 정보를 구분하기
+		// 1//3=> "남", 2/4 => "여"
+		// 해당 주민번호의 성별은? : ""
+		var s = jumin.substr(7,1);
+		document.write(
+			if(s==1||s==3){
+				alert("해당 주민번호의 성별은? : 남")
+			}else if(s==2||s==4){
+				alert("해당 주민번호의 성별은? : 여")
+			}else{
+				alert("잘못된 전화번호입니다");
+			}		
+		);		
+		
+		
+		//사용자 전화번호 입력
+		//010-1234-5678 => 010-****-5678
+		
+		var tel="010-1234-5678";
+		for(int i=4;i<8;i++){
+			tel.charAt[i]="*";
+		}
+		
+		document.write(tel);
+		
+		var tel="010-1234-5678";
+		alert(tel.substr(0,4)+"****"+tel.substr(8,5));
+		
+		
+	
+		
+	</script>
+</head>
+<body>
+	<h1>WebContent/js2/test3.html</h1>
+
+
+</body>
+</html>
